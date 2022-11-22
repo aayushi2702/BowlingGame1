@@ -19,4 +19,11 @@ public class BowlingGameService {
 	public int getScoreAfterBowlHits() {
 		return score;
 	}
+	
+	public void rollABowl(int timesABowlRolls, int pinsDown ) {
+		for (int i = 0; i < timesABowlRolls; i++) {
+			rollingABowl_InBowlingGameTest(pinsDown);
+
+		}
+	}
 }

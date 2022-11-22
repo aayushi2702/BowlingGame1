@@ -24,25 +24,19 @@ public class BowlingGameServiceTests {
 
 	@Test
 	public void getARollBowlInBowlingGame() {
-		BowlingGameService bowlingGameService = new BowlingGameService();
-		bowlingGameService.rollingABowlInBowlingGameTest(0);  //to simply roll a bowl
+		bowlingGameService.rollingABowlInBowlingGameTest(0); // to simply roll a bowl
 	}
 
 	@Test
 	public void getARollerBowlScoringAGutterBowlTests() {
-		for (int i = 0; i < 20; i++) {
-			bowlingGameService.rollingABowl_InBowlingGameTest(0);
-
-		}
+		bowlingGameService.rollABowl(20, 0);
 		assertThat(bowlingGameService.getScoreAfterBowlHits(), is(0));
 	}
 	
 	@Test
 	public void getARollerBowlToScoreAGameOf_1Tests() {
-		for (int i = 0; i < 20; i++) {
-			bowlingGameService.rollingABowl_InBowlingGameTest(1);
-
-		}
+		bowlingGameService.rollABowl(20, 1);
 		assertThat(bowlingGameService.getScoreAfterBowlHits(),is(20));
 	}
+	
 }
