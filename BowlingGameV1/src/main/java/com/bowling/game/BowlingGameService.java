@@ -34,8 +34,8 @@ public class BowlingGameService {
 		return score;
 	}
 	
-	public void rollABowl(int timesABowlRolls, int pinsDown ) {
-		for (int i = 0; i < timesABowlRolls; i++) {
+	public void rollABowl(int...rolls) {
+		for (int pinsDown : rolls) {
 			rollingABowl_InBowlingGameTest(pinsDown);
 
 		}
