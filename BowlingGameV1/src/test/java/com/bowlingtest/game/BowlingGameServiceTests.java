@@ -1,10 +1,18 @@
 package com.bowlingtest.game;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.bowling.game.BowlingGameService;
 
 public class BowlingGameServiceTests {
+	
+	BowlingGameService bowlingGameService;
+	
+	@Before
+	public void setUp() {
+		bowlingGameService = new BowlingGameService();
+	}
 	
 	@Test
 	public void getABowlingGame() {
