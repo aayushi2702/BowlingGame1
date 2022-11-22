@@ -23,7 +23,10 @@ public class BowlingGameService {
 		int score = 0;
 		int curser = 0;
 		for (int frame = 0; frame < 10; frame++) {
-			if (isSpare(curser)) {
+			if (isStrike(curser)) {
+				score += 10 + rolls[curser + 1] + rolls[curser + 2];
+				curser++;
+			} else if (isSpare(curser)) {
 				score += 10 + rolls[curser + 2];
 				curser += 2;
 			} else {
@@ -43,5 +46,9 @@ public class BowlingGameService {
 	
 	private boolean isSpare(int curser) {
 		return rolls[curser] + rolls[curser + 1] == 10;
+	}
+	
+	private boolean isStrike(int curser) {
+		return rolls[curser] == 10;
 	}
 }

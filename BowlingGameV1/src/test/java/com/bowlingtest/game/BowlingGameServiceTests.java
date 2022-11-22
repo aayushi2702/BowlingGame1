@@ -15,6 +15,7 @@ public class BowlingGameServiceTests {
 	private static final int[] GUTTER_GAME = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	private static final int[] EACH_ROLL_PINS_DOWN_1 = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 	private static final int[] SPARE_START_FOLLOWED_BY_3_REST_0 = { 5,5, 3,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0 };
+	private static final int[] SPARE_START_FOLLOWED_BY_3_FOLLOWED_BY_3 = { 10, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	
 	@Before
 	public void setUp() {
@@ -47,6 +48,12 @@ public class BowlingGameServiceTests {
 	public void getARollerBowlToScoreASpareFollowedBy3Tests() {
 		bowlingGameService.rollABowl(SPARE_START_FOLLOWED_BY_3_REST_0);
 		assertThat(bowlingGameService.getScoreAfterBowlHits(), is(16));
+	}
+	
+	@Test
+	public void getARollerBowlToScoreAStrikeFollowedBy3AndFollowedBy3() {
+		bowlingGameService.rollABowl(SPARE_START_FOLLOWED_BY_3_FOLLOWED_BY_3);
+		assertThat(bowlingGameService.getScoreAfterBowlHits(), is(22));
 	}
 	
 }
