@@ -11,4 +11,9 @@ public class BowlingGameServiceTests {
 		new BowlingGameService();
 	}
 
+	@Test
+	public void getARollBowlInBowlingGame() {
+		BowlingGameService bowlingGameService = new BowlingGameService();
+		bowlingGameService.rollingABowlInBowlingGameTest(0);  //to simply roll a bowl
+	}
 }
