@@ -39,4 +39,10 @@ public class BowlingGameServiceTests {
 		assertThat(bowlingGameService.getScoreAfterBowlHits(),is(20));
 	}
 	
+	@Test
+	public void getARollerBowlToScoreASpareFollowedBy3Tests() {
+		bowlingGameService.rollABowl(17, 0);
+		assertThat(bowlingGameService.getScoreAfterBowlHits(), is(16));
+	}
+	
 }
