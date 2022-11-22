@@ -1,7 +1,9 @@
 package com.bowling.game;
 
 public class BowlingGameService {
-	
+
+	private int score = 0;
+
 	public BowlingGameService() {
 		super();
 	}
@@ -11,10 +13,10 @@ public class BowlingGameService {
 	}
 	
 	public void rollingABowl_InBowlingGameTest(int pinDows) {
-		System.out.println("Rolling a Gutter ball...");
+		score = score + pinDows;
 	}
 
 	public int getScoreAfterBowlHits() {
-		return 0;
+		return score;
 	}
 }

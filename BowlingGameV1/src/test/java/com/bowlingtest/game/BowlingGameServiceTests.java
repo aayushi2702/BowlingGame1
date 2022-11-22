@@ -36,4 +36,13 @@ public class BowlingGameServiceTests {
 		}
 		assertThat(bowlingGameService.getScoreAfterBowlHits(), is(0));
 	}
+	
+	@Test
+	public void getARollerBowlToScoreAGameOf_1Tests() {
+		for (int i = 0; i < 20; i++) {
+			bowlingGameService.rollingABowl_InBowlingGameTest(1);
+
+		}
+		assertThat(bowlingGameService.getScoreAfterBowlHits(),is(20));
+	}
 }
